@@ -5,13 +5,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var select = document.createElement('div');
         select.classList.add("select")
         item.appendChild(select);
-        select.style.display = "none";
-
-        var select = document.createElement('div');
-        select.classList.add("select2")
-        item.appendChild(select);
-        select.style.display = "none";
-
+        if (item.textContent != "HOME") {
+            select.style.display = "none";
+        }
 
         item.style.rotate = (Math.random()*25 - 10) + 'deg';
         item.style.skew = '20deg 20deg;'
@@ -39,6 +35,14 @@ function Click(e, item){
         item.querySelector('div').style.display = "none"
     })
 
+    if (item.textContent == "HOME") {
+        document.querySelector('.menu').classList?.remove('menu-state2');
+    }
+    else {
+        document.querySelector('.menu').classList?.add('menu-state2');
+    }
+
+    document.querySelector('.side-text').textContent = item.textContent;
     item.querySelector('div').style.display = "block"
     item.classList.add('menu-active');
     

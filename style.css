@@ -2,6 +2,7 @@
     /* outline: 1px solid red; */
     font-family: "Roboto", sans-serif;
     /* margin: 0; */
+    box-sizing: border-box;
 }
 
 /* ul{
@@ -13,6 +14,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    transition: all 0.3s ease-in-out;
     
     
     ul{
@@ -23,7 +26,7 @@
         color: aquamarine;
         font-weight: 900;
         font-size: 3rem;
-        letter-spacing: -0.15em;
+        letter-spacing: -0.1em;
         font-style: normal;
         z-index: 10;
         user-select: none;
@@ -31,7 +34,8 @@
         
 
         li{
-            position: relative;    
+            position: relative;
+            
         }
     }
     
@@ -50,6 +54,14 @@
     scale: 1.6;
     z-index: 200 !important;
     pointer-events: none;
+    text-shadow: 2px 2px blue;
+}
+
+.menu-state2{
+    transform: translate(-45vw, -50vh) rotate(9deg);
+    div.box {
+        transform: translateX(-70%) translateY(-30%) scaleY(146%) scaleX(120%);
+    }
 }
 
 .box{
@@ -61,18 +73,64 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
+    transition: all 0.3s ease-in-out;
 }
 
 .select{
+    width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid white;
+	border-bottom: 25px solid transparent;
+
+
     position: absolute;
-    z-index: 99 !important;
-    background-color: brown;
+    z-index: -2!important;
+    opacity: 50%;
+    /* height: 50%;
+    width: 100%; */
+    top: 30%;
+    left: 50%;
+    rotate: 15deg;
+    transform: translate(-40%, -12%) scaleY(120%) scaleX(350%) skewy(-40deg) skewx(-5deg);
+    pointer-events: none;
+}
+
+/* .select{
+    width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid white;
+	border-bottom: 25px solid transparent;
+
+
+    position: absolute;
+    z-index: -1!important;
     opacity: 50%;
     height: 50%;
     width: 100%;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    rotate: -5deg;
-    transform: translate(-40%, -30%);
+    rotate: 15deg;
+    transform: translate(-40%, -12%) scaleY(120%) scaleX(350%) skewy(-40deg) skewx(-5deg);
     pointer-events: none;
+} */
+
+.side-text{
+    transform-origin: bottom left;
+    position: fixed;
+    color: black;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: -0.17em;
+    left: 103%;
+    top: 95%;
+    text-wrap: nowrap;
+    rotate: 90deg;
+    transform: scale(-1,-1) scale(4) skew(-10deg);   
+}
+
+.body{
+    display: flex;
+    height: 100vw;
 }
