@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('mousemove', (e) => MouseMove(e))
+    document.addEventListener('scroll', (e) => ScrolleMove(e))
     const items = document.querySelectorAll('.menu ul li')
     items.forEach((item, index) => {
         
@@ -17,10 +19,16 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     const items2 = document.querySelectorAll('.project')
     items2.forEach((item, index) => {
-        item.style.rotate = (Math.random()*5 - 2.5) + 'deg';
+        item.style.rotate = (Math.random()*10 - 5) + 'deg';
+        // item.querySelector('video').style.scale = 1.1;
+        // item.style.scale = "1.1";
     })
 
 });
+
+setInterval(function() {
+    updateProjects(document.querySelectorAll('.project'))
+}, 10)
 
 function Hover(e, item){
     item.classList.add('menu-hover');
@@ -63,5 +71,33 @@ function Click(e, item){
 function DeleteChildID(item, id){
     const child = document.getElementById(id);
     item.removeChild(child);
+}
+
+function updateProjects(item){
+    var items = document.querySelectorAll(".project")
+    items.forEach((item, index) => {
+        rect = item.getBoundingClientRect()
+        number = Math.sqrt(distance(0, (rect.y+rect.height/2), 0, -100))
+        number2 = Math.sqrt(distance(0, (rect.y+rect.height/2), 0, window.innerHeight + 100))
+        number = Math.min(number, number2)
+        number = linearmap(number,0, 20, -20, 30)
+        item.style.left=  number + "vw"
+        // document.querySelector('.side-text').textContent = number
+        
+    })
+}
+function getMousePos(e) {
+    return {x:e.pageX,y:e.pageY};
+}
+
+function distance(x1, y1, x2, y2){
+    return Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2))
+}
+
+function linearmap(value,inlow, inhigh, low, high){
+    output = low + ((high - low) / (inhigh - inlow)) * (value - inlow)
+    if (output > high){return high}
+    if (output < low){return low}
+    else {return output}
 }
 

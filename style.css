@@ -1,5 +1,5 @@
 *{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     font-family: "Roboto", sans-serif;
     /* margin: 0; */
     box-sizing: border-box;
@@ -16,9 +16,11 @@
     transform: translate(-50%, -50%);
 
     transition: all 0.3s ease-in-out;
+    z-index: 5;
     
     
     ul{
+        
         position: relative;
         list-style: none;
         padding-left: 0;
@@ -34,6 +36,7 @@
         
 
         li{
+            transition: scale 0.1s ease-in-out;
             position: relative;
             
         }
@@ -135,31 +138,74 @@
 .body{
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    width: calc(100% - 25rem);
-    left: 25rem;
+    /* align-items: center; */
 }
 
 .projects{
-    background-color: brown;
     display: none;
-    /* width: 100vw; */
 }
 
 .project{
-    /* rotate: 3deg; */
-    width: 65vw;
+    display: flex;
+    position: relative;
+
+    left: 30vw;
+    width: 20vw;
+    height: 10vw;
+
+    transition: width 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+    .background {
+        transition: all 0.3s ease-in-out;
+        background-color: blue;
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        z-index: 1;
+    }
+    div {
+        position: relative;
+        flex: 3;
+        z-index: 2;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+  
     p {
+        flex: 1;
         display: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 2;
     }
 }
 
 .project:hover{
-    width: 65vw;
+    width: 60vw;
+    height: 20vw;
+    z-index: 4;
+    .background{
+        width: 100%;
+        height: 100%;
+    }
+    video {
+        padding: 0.3vw;
+    }
     p {
         display: block;
     }
+}
+
+.space{
+    height: 25vh;
+}
+
+.body-text{
+    font-weight: 600;
+    color: white;
 }
