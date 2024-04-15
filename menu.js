@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function(){
         item.querySelector('span').addEventListener('mouseleave', (e) => notHover(e, item))
         item.querySelector('span').addEventListener('click', (e) => Click(e, item))
     })
+    const items2 = document.querySelectorAll('.project')
+    items2.forEach((item, index) => {
+        item.style.rotate = (Math.random()*5 - 2.5) + 'deg';
+    })
+
 });
 
 function Hover(e, item){
@@ -40,6 +45,13 @@ function Click(e, item){
     }
     else {
         document.querySelector('.menu').classList?.add('menu-state2');
+    }
+
+    if (item.textContent == "PROJECTS") {
+        document.querySelector(".projects").style.display = "block";
+    }
+    else {
+        document.querySelector(".projects").style.display = "none";
     }
 
     document.querySelector('.side-text').textContent = item.textContent;
