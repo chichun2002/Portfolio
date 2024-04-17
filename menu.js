@@ -55,11 +55,25 @@ function Click(e, item){
         document.querySelector('.menu').classList?.add('menu-state2');
     }
 
+    if (item.textContent == "ABOUT") {
+        document.querySelector(".about").style.display = "block";
+    }
+    else {
+        document.querySelector(".about").style.display = "none";
+    }
+
     if (item.textContent == "PROJECTS") {
         document.querySelector(".projects").style.display = "block";
     }
     else {
         document.querySelector(".projects").style.display = "none";
+    }
+
+    if (item.textContent == "CONTACT") {
+        document.querySelector(".contact").style.display = "block";
+    }
+    else {
+        document.querySelector(".contact").style.display = "none";
     }
 
     document.querySelector('.side-text').textContent = item.textContent;
