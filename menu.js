@@ -1,8 +1,14 @@
+
+
 document.addEventListener('DOMContentLoaded', function(){
-    document.addEventListener('mousemove', (e) => MouseMove(e))
-    document.addEventListener('scroll', (e) => ScrolleMove(e))
-    const items = document.querySelectorAll('.menu ul li')
-    items.forEach((item, index) => {
+    // document.addEventListener('mousemove', (e) => MouseMove(e))
+    // document.addEventListener('scroll', (e) => ScrolleMove(e))
+    const content = document.querySelectorAll('.content')
+    content.forEach((item, index) => {
+        item.style.rotate = (Math.random()*10) + 'deg';
+    })
+    const items2 = document.querySelectorAll('.menu ul li')
+    items2.forEach((item, index) => {
         
         var select = document.createElement('div');
         select.classList.add("select")
@@ -17,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function(){
         item.querySelector('span').addEventListener('mouseleave', (e) => notHover(e, item))
         item.querySelector('span').addEventListener('click', (e) => Click(e, item))
     })
-    const items2 = document.querySelectorAll('.project')
-    items2.forEach((item, index) => {
+    const items3 = document.querySelectorAll('.project')
+    items3.forEach((item, index) => {
         item.style.rotate = (Math.random()*10 - 5) + 'deg';
         // item.querySelector('video').style.scale = 1.1;
         // item.style.scale = "1.1";
@@ -114,4 +120,25 @@ function linearmap(value,inlow, inhigh, low, high){
     if (output < low){return low}
     else {return output}
 }
+
+
+function animate() {
+   
+
+    const content = document.querySelectorAll('.content')
+    content.forEach((item, index) => {
+        positionX = (((Math.random()-0.5))) * 20
+        positionY = (((Math.random()-0.5))) * 20
+        // console.log(positionX)
+        // console.log(positionY)
+        item.style.transform = `translate(${ positionX }px, ${ positionY }px)`;
+    })
+    requestAnimationFrame(() => {
+        setTimeout(animate, 2000);
+    });
+}
+
+animate();
+// animate();
+// setTimeout(function() { animate()}, 2500);
 

@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 *{
-    /* outline: 1px solid red; */
     font-family: "Inter", sans-serif;
 	font-style: normal;
     box-sizing: border-box;
 }
 
+a {
+    color: white;
+}
+
+div {
+    /* outline: 1px solid red; */
+}
+
 /* ul{
     list-style: none;
 } */
+
+body{
+    overflow-x: hidden;
+}
 
 .menu{
     position: fixed;
@@ -160,10 +171,10 @@
     transition: height 0.3s ease-in-out;
     .background {
         transition: all 0.3s ease-in-out;
-        background-color: blue;
+        background: blue;
         position: absolute;
         height: 100%;
-        width: 0%;
+        width: 10%;
         z-index: 1;
     }
     div {
@@ -211,7 +222,7 @@
 }
 
 .space{
-    height: 25vh;
+    height: 15vh;
 }
 
 .about{
@@ -220,7 +231,10 @@
     width: 60vw;
     display: none;
     p {
-        color: black;
+        color: white;
+    }
+    h3{
+        color: white;
     }
 }
 
@@ -230,11 +244,73 @@
     width: 60vw;
     display: none;
     p {
-        color: black;
+        color: white;
     }
 }
 
 p{
     font-weight: 600;
     color: white;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    /* flex-direction: row; */
+    /* align-items: baseline; */
+
+}
+
+.content{
+    transition: transform 3s linear;
+    padding: 1%;
+    display: block;
+    width: max-content;
+    background-color: blue;
+    .para {
+        width: 40vw;
+    }
+}
+
+.content:hover{
+    scale: 1.2;
+}
+
+.top{
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    background: linear-gradient(0deg, rgb(84, 170, 250) 0%, rgb(132, 235, 255) 100%);
+}
+
+
+.backdrop{
+    margin: -10px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, Blue 5%, rgba(0,212,255,1) 100%);
+}
+
+.backdrop2{
+    transform-origin: left center;
+    position: absolute;
+    width: 100vw;
+    height: 200vh;
+    top: -50vh;
+    left: 80vw;
+    rotate:35deg;
+    background: white;
+}
+
+.backdrop3{
+    transform-origin: left center;
+    position: absolute;
+    width: 100vw;
+    height: 200vh;
+    top: -60vh;
+    left: 50vw;
+    rotate: calc(-70deg + 180deg);
+    background: white;
 }
