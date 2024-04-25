@@ -258,11 +258,23 @@ p{
     flex-wrap: wrap;
     gap: 5vw;
     /* flex-direction: row; */
-    /* align-items: baseline; */
+    align-items: flex-start;
 
 }
 
+/* .content_back{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background-color: brown;
+    z-index: -2;
+} */
+
 .content{
+    position: relative;
+    z-index: 10;
     transition: transform 3s linear;
     padding: 1%;
     display: block;
@@ -313,4 +325,11 @@ p{
     left: 50vw;
     rotate: calc(-70deg + 180deg);
     background: white;
+}
+
+.backdrop_wrapper{
+    position: absolute;
+    top: -70vh;
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0,0,0,1);
 }

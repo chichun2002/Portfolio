@@ -56,9 +56,11 @@ function Click(e, item){
 
     if (item.textContent == "HOME") {
         document.querySelector('.menu').classList?.remove('menu-state2');
+        document.querySelector('.backdrop_wrapper').style.transform = "TranslateY(0vh)";
     }
     else {
         document.querySelector('.menu').classList?.add('menu-state2');
+        document.querySelector('.backdrop_wrapper').style.transform = "TranslateY(50vh)";
     }
 
     if (item.textContent == "ABOUT") {

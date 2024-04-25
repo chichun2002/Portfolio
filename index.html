@@ -10,9 +10,11 @@
 <body>
     <div class="root">
         <div class="rellax" data-rellax-speed="-8">
-            <div class="backdrop"></div>
-            <div class="backdrop2"></div>
-            <div class="backdrop3"></div>
+            <div class="backdrop_wrapper">
+                <div class="backdrop"></div>
+                <div class="backdrop2"></div>
+                <div class="backdrop3"></div>
+            </div>
         </div>
         <div class="contact">
             <div class="space"></div>
@@ -32,8 +34,23 @@
             <div class="wrapper">
                 <div class="content">
                     <!-- <h1>ABOUT</h1> -->
-                    <h2>Introductoin</h2>
+                    <h2>Introduction</h2>
                     <p class="para">My name is Tristan I'm a Software Developer with a pasion for AI and Computer Graphics. I graduated with a bachelor degree in copmuter science and media arts where I specialised in artifical inteligence, specifficaly neural networks and classifiers. Within media arts I studied VFX and 3D workflows, Im pasionate about all things computer science and computer graphics and am constantly experimenting with the latest technologys. </p>    
+                    <div class="content_back"></div>
+                </div>
+
+                <div class="content">
+                    <!-- <h1>ABOUT</h1> -->
+                    <h2>Summary</h2>
+                    <ul>
+                        <li><p class="para">Developed Python Flask backend server within a small group using Agile development for a ‘Microsoft Teams’ style frontend using http requests</p></li>
+                        <li><p class="para">Developed neural networks, ensemble learning and classifiers within python using pytorch, opencv and numpy. Created a functioning Perceptron learning algorithm using numpy</p></li>
+                        <li><p class="para">Experience Modeling, creating materials lighting rendering, uv mapping and animating with Blender</p></li>
+                        <li><p class="para">Studied algorithm and data structure designs with time complexities examples include; dynamic programming, max flow, graphs and trees</p></li>
+                        <li><p class="para">Researched Video to Video transformers to create real time video augmentation for games, using models such as stylegan and latent diffusion</p></li>
+                    </ul>
+                    
+                    <div class="content_back"></div>
                 </div>
                 
                 <div class="content">
@@ -84,6 +101,15 @@
             
         <div class="body projects">
             <div class="space"></div>
+            <div class="project">
+                <div class="background"></div>
+                <div>
+                    <video onmouseover="this.play()"> 
+                        <source src="WebVideo4.mp4"/>
+                    </video>
+                </div>
+                <p class="body-text">Video to Video Transformers to convert game style from CS Source to Valorant using a variety of different models such as STYLE GAN, CUTGAN and UNSB</p>
+            </div>
             <div class="project">
                 <div class="background"></div>
                 <div>
